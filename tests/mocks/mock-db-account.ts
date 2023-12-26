@@ -1,4 +1,4 @@
-import { Account, AddAccount, AddAccountRepository, CheckAccountByEmailRepository } from '@/controllers/account/protocols'
+import { Account, AddAccount, AddAccountRepository, CheckAccountByEmailRepository, LoadAccountByEmailRepository, UpdateAccessTokenRepository } from '@/controllers/account/protocols'
 import { mockAccount } from './mock-account'
 
 export class AddAccountRepositorySpy implements AddAccountRepository {
@@ -13,6 +13,25 @@ export class CheckAccountByEmailRepositorySpy implements CheckAccountByEmailRepo
     email: string
     result = false
     async checkByEmail(email: string): Promise<boolean> {
+        this.email = email
+        return this.result
+    }
+}
+
+export class UpdateAccessTokenRepositorySpy implements UpdateAccessTokenRepository {
+    id: number
+    token: string
+    async updateAccessToken(id: number, token: string): Promise<void> {
+        this.id = id
+        this.token = token
+    }
+}
+
+export class LoadAccountByEmailRepositorySpy implements LoadAccountByEmailRepository {
+    email: string
+    result = mockAccount()
+
+    async loadByEmail(email: string): Promise<Account> {
         this.email = email
         return this.result
     }

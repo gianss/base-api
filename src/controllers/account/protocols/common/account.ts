@@ -10,4 +10,5 @@ export interface Account {
     account_status_id: number
     type_name: string
     status_name: string
+    access_token: string
 }

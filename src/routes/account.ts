@@ -4,6 +4,6 @@ import { makeAddAccountController } from '@/middleware/account/add-account-middl
 
 const app = Router()
 
-app.get('/', adaptRoute(makeAddAccountController()))
+app.post('/', adaptRoute(makeAddAccountController()))
 
 export default app

@@ -11,7 +11,8 @@ export const mockAccount = (): Account => ({
     account_status_id: 1,
     account_type_id: 1,
     status_name: 'active',
-    type_name: 'administration'
+    type_name: 'administration',
+    access_token: 'any_token'
 })
 
 export const mockAddAccountParams = (): AddAccount => ({
