@@ -1,4 +1,4 @@
-import { Account, AddAccount, AddAccountRepository, CheckAccountByEmailRepository, LoadAccountByEmailRepository, UpdateAccessTokenRepository } from '@/controllers/account/protocols'
+import { Account, AddAccount, AddAccountRepository, CheckAccountByEmailRepository, LoadAccountByEmailRepository, UpdateAccessTokenRepository } from '@/domain/interfaces/account'
 import { mockAccount } from './mock-account'
 
 export class AddAccountRepositorySpy implements AddAccountRepository {

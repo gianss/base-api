@@ -1,4 +1,4 @@
-import { Account, AddAccount } from '@/controllers/account/protocols'
+import { Account, AddAccount } from '@/domain/interfaces/account'
 
 export const mockAccount = (): Account => ({
     id: 1,
