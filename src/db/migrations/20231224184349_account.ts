@@ -18,6 +18,7 @@ export async function up(knex: Knex): Promise<void> {
             table.integer('phone').notNullable()
             table.string('password', 200).notNullable()
             table.string('date_birth').nullable()
+            table.string('access_token', 150).notNullable()
             table.integer('account_type_id').notNullable()
             table.integer('account_status_id').notNullable().defaultTo(1)
             table.foreign('account_type_id').references('id').inTable('account_type')

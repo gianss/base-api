@@ -1,8 +1,8 @@
-import { throwError } from '../mocks'
-import { mockAccount, mockAddAccountParams } from '../mocks/mock-account'
-import { HasherSpy } from '../mocks/mock-cryptography'
-import { AddAccountRepositorySpy, CheckAccountByEmailRepositorySpy } from '../mocks/mock-db-account'
-import { DbAddAccount } from '@/controllers/account/db-add-account'
+import { throwError } from '../../mocks'
+import { mockAccount, mockAddAccountParams } from '../../mocks/mock-account'
+import { HasherSpy } from '../../mocks/mock-cryptography'
+import { AddAccountRepositorySpy, CheckAccountByEmailRepositorySpy } from '../../mocks/mock-db-account'
+import { DbAddAccount } from '@/controllers/account/usecases/db-add-account'
 
 type SutTypes = {
     sut: DbAddAccount

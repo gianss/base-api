@@ -1,5 +1,5 @@
 import { Hasher } from '@/helpers/cryptography/protocols'
-import { CheckAccountByEmailRepository, AddAccountImplementation, AddAccountRepository, Account, AddAccount } from './protocols/'
+import { CheckAccountByEmailRepository, AddAccountImplementation, AddAccountRepository, Account, AddAccount } from '../protocols'
 
 export class DbAddAccount implements AddAccountImplementation {
     constructor(
