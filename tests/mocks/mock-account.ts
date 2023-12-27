@@ -1,4 +1,4 @@
-import { Account, AddAccount } from '@/domain/interfaces/account'
+import { Account, AddAccount, LoginData } from '@/domain/interfaces/account'
 
 export const mockAccount = (): Account => ({
     id: 1,
@@ -24,4 +24,9 @@ export const mockAddAccountParams = (): AddAccount => ({
     date_birth: '1993-07-10',
     account_status_id: 1,
     account_type_id: 1
+})
+
+export const mockLoginParams = (): LoginData => ({
+    email: 'any_email@mail.com',
+    password: 'any_password'
 })
