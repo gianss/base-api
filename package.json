@@ -7,7 +7,7 @@
     "start": "node dist/main/server.js",
     "start:dev": "nodemon",
     "debug": "nodemon -L --watch  --inspect=0.0.0.0:9222 --nolazy",
-    "knex": "knex --knexfile ./src/db/config/knexfile.js",
+    "knex": "knex --knexfile ./src/infra/database/config/knexfile.js",
     "build": "tsc --project tsconfig-build.json && tsconfig-replace-paths -p tsconfig-build.json -s ./src -o ./dist",
     "build:watch": "tsc --project tsconfig-build.json -w && tsconfig-replace-paths -p tsconfig-build.json -s ./src -o ./dist",
     "test": "jest --passWithNoTests --runInBand --no-cache",

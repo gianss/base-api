@@ -3,16 +3,16 @@ import { db } from '../config/knexfile'
 
 export class AccountKnexRepository implements AddAccountRepository, LoadAccountByEmailRepository, UpdateAccessTokenRepository, LoadAccountByTokenRepository, CheckAccountByEmailRepository {
     async add(data: AddAccount): Promise<Account> {
-        const result = await db('accounts').insert(data)
+        const result = await db('account').insert(data)
         if (result.length > 0) {
-            const account = await db('accounts').where('id', result[0]).first()
+            const account = await db('account').where('id', result[0]).first()
             return account
         }
         return null
     }
 
     async checkByEmail(email: string): Promise<boolean> {
-        const account: any = await db('accounts').where('email', email).first()
+        const account: any = await db('account').where('email', email).first()
         if (account?.id) {
             return true
         }
@@ -20,17 +20,17 @@ export class AccountKnexRepository implements AddAccountRepository, LoadAccountB
     }
 
     async loadByEmail(email: string): Promise<Account> {
-        const account = await db('accounts')
+        const account = await db('account')
             .where('email', email).first()
         return account
     }
 
     async updateAccessToken(id: number, token: string): Promise<void> {
-        await db('accounts').update('access_token', token).where('id', id)
+        await db('account').update('access_token', token).where('id', id)
     }
 
     async loadByToken(token: string, type?: number): Promise<Account> {
-        const account = await db('accounts')
+        const account = await db('account')
             .where('access_token', token)
             .andWhere(function (): void {
                 if (type) {
